@@ -1,7 +1,20 @@
-# resume page
+# Jekyll Materialize Starter Template v0.1
 
-#### http://zhongink.gitee.io/page
+*A Site Starter Materialize Templates.
 
-![输入图片说明]( ./static/image/catch_1.png "catch")
-![输入图片说明]( ./static/image/catch_2.png "catch")
-![输入图片说明]( ./static/image/catch_3.png "catch")
+The theme is a fork of the [minima][1]
+
+![minima theme preview](/screenshot.png)
+
+
+# License
+
+The theme is available as so I use this source [MIT License][2].
+
+[Materialize][3] a  modern responsive front-end framework based on Material Design
+
+Copyright © 2019 Marco Damiani. Powered by <a href="http://jekyllrb.com">Jekyll</a>
+
+[1]: https://github.com/jekyll/minima
+[2]: https://opensource.org/licenses/MIT
+[3]: http://materializecss.com/
