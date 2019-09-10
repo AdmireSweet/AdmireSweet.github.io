@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Links
-tagline: My friends.
+title: Hello world
+tagline: 我是一只合格的程序猿
 permalink: /links.html
 ---
 
