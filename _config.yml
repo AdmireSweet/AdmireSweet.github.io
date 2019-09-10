@@ -1,11 +1,11 @@
 title: Sweet #博客标题
-description: 一个沙雕程序猿的博客 #博客描述
+description: 一个沙雕程序猿的微博 #博客描述
 keywords: blog,css,html,php #博客关键字
 author: "Sweet"
 
 #title hide and show
 hide: (つェ⊂)我藏好啦
-show: ´∇｀ 呀被发现啦~ 
+show: ´∇｀ 呀被发现啦~
 
 baseurl: "" # change this to the subpath of your site, e.g. /blog. Leave it empty if you don't need it.
 url: "hydrogen.atlinker.cn" # change this to the base hostname & protocol for your site
