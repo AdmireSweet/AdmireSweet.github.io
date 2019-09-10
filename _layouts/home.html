@@ -1,78 +1,76 @@
 ---
 layout: default
 ---
+	
+	  {{ content }}
+	
+	  <!--<h2>#</h2>
+	  <span></span>-->
 
-  <div class="section no-pad-bot" id="index-banner">
-    <div class="container">
-      <br><br>
-      <h1 class="header center orange-text">{{ site.title }}</h1>
-      <div class="row center">
-        <h5 class="header col s12 light">{{ content }}</h5>
-      </div>
-        
-      <div class="row center">
-        <a href="http://materializecss.com/getting-started.html" id="download-button" class="btn-large waves-effect waves-light orange">Get Started</a>
-      </div>
-      <br><br>
+  <div>&nbsp;</div>
 
-    </div>
-  </div>
+  <ul class="post-list">
+    
+{% if paginator.page == 1 %}
+  {% for post in site.posts %}
+      {% if post.stickie != true %}
+        {% continue %}
+      {% endif %}
+    <li>
 
-  <div class="container">
-    <div class="section">
+        {% assign date_format = site.hydrogen-blog.date_format | default: "%b %-d, %Y" %}
+        <span class="post-meta">{{ post.date | date: date_format }}</span> <span style="font-size:15px;background:#F48FB1;color:#fff;padding:4px 15px;border-radius:6px;-webkit-box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);
+          box-shadow: 0 3px 1px -2px rgba(0, 0, 0, .2), 0 2px 2px 0 rgba(0, 0, 0, .14), 0 1px 5px 0 rgba(0, 0, 0, .12);">缃《</span>
 
-      <!--   Icon Section   -->
-      <div class="row">
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">flash_on</i></h2>
-            <h5 class="center">个人简介</h5>
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title | escape }}</a>
+        </h2>
 
-            <p class="light">张慧婷，就读于中国海洋大学计算机科学与技术专业，喜欢编程、喜欢打游戏，甜品是我的最爱，躺尸是我的日常状态。</p>
-          </div>
-        </div>
+        <span>{{ post.excerpt | markdownify | truncatewords: 30 }}</span>
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">group</i></h2>
-            <h5 class="center">不良人</h5>
+      </li>
+  {% endfor %}
+{% endif %}
+    
+  {% for post in paginator.posts %}
+    {% if post.stickie == true %}
+      {% continue %}
+    {% endif %}
+    
+      <li>
 
-            <p class="light">很多人都问我，为什么喜欢用这样的昵称。其实这是一部国产动漫，画风优良，剧情荡气回肠，里面的每一个角色都很鲜活，推荐给小伙伴们！</p>
-          </div>
-        </div>
+        {% assign date_format = site.hydrogen-blog.date_format | default: "%b %-d, %Y" %}
+        <span class="post-meta">{{ post.date | date: date_format }}</span>
 
-        <div class="col s12 m4">
-          <div class="icon-block">
-            <h2 class="center light-blue-text"><i class="material-icons">settings</i></h2>
-            <h5 class="center">我的微博</h5>
+        <h2>
+          <a class="post-link" href="{{ post.url | relative_url }}" title="{{ post.title }}">{{ post.title | escape }}</a>
+        </h2>
 
-            <p class="light">一入微博深似海，从此节操是路人。微博是沙雕们的聚居地，因为这里几乎没有人认识我吗。当然，up主和灵魂画手们是我在这个平台上最敬佩的人！</p>
-          </div>
-        </div>
-      </div>
+        <span>{{ post.excerpt | markdownify | truncatewords: 30 }}</span>
 
-    </div>
-      
-    </div>
-    <div style="background: #ddd">
-    <div class="container last-post">
-    <section>
-        <h5>Latest Post</h5>
-        <ul class="collection">
-        {% for post in site.posts %}
-        <li class="collection-item avatar">
-          {% assign date_format = site.minima.date_format | default: "%m/%d" %}
-          <div class="date-post">{{ post.date | date: date_format }}</div>
-          <span class="title"><a class="post-link" href="{{ post.url | relative_url }}">{{ post.title | escape }}</a></span>
-          <p>
-             {{ post.content | truncatewords: 10 }}
-          </p>
-          <a href="{{ post.url | relative_url }}" class="secondary-content"><i class="material-icons">navigate_next</i></a>
-        </li>
-        {% endfor %}
-        </ul>  
-    </section>
-    </div>
+      </li>
+
+    {% endfor %}
+
+  </ul>
+
 </div>
 
-  </div>
+{% if paginator.total_pages > 1 %}
+<div class="pagination">
+  {% if paginator.previous_page %}
+    <a  class="cm-l" href="{{ paginator.previous_page_path | prepend: site.baseurl | replace: '//', '/' }}"><img src="/theme/left.svg" style="height:28px"></a>
+  {% else %}
+    <span class="cm-l"><img src="/theme/leftdis.svg" style="height:28px"></span>
+  {% endif %}
+
+  {% if paginator.next_page %}
+    <a class="cm-r" href="{{ paginator.next_page_path | prepend: site.baseurl | replace: '//', '/' }}"><img src="/theme/right.svg" style="height:28px"></a>
+  {% else %}
+    <span class="cm-r"><img src="/theme/rightdis.svg" style="height:28px"></span>
+  {% endif %}
+</div>
+
+<div class="cm-c">{{paginator.page}}/{{paginator.total_pages}}</div>
+
+{% endif %}
