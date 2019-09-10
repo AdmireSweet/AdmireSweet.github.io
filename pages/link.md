@@ -1,7 +1,7 @@
 ---
 layout: page
-title: Hello world
-tagline: 我是一只合格的程序猿
+title: 不良人
+tagline: 一天是不良人，一生都是不良人……
 permalink: /links.html
 ---
 
@@ -13,7 +13,6 @@ permalink: /links.html
 </div>
 {% endfor %}
 
-[返回主页]({{ site.url }})
 
 <hr/>
 

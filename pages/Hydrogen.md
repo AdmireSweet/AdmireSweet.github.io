@@ -1,7 +1,7 @@
 ---
 layout: page
-title: 不良人
-tagline: 一天是不良人，一生都是不良人……
+title: Hello world
+tagline: 我是一只合格的程序猿
 ---
 
 
