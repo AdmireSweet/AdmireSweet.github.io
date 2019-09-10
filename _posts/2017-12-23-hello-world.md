@@ -1,10 +1,10 @@
 ---
 layout: post
-title: Hello World!
+title: 不良人
 tags: Hydrogen
 stickie: true
 ---
 
-Welcome!<br>不良人 your blog has been successfully deployed.So enjoy the fun of writing now!
+一天是不良人，一生都是不良人……
 
 > Hello Hydrogen!
