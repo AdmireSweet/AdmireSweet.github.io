@@ -6,20 +6,10 @@ permalink: /links.html
 ---
 
 
-{% for f in site.data.friends %}
-<div class="link-chip">
- <img alt="{{f.describe}}" src="{{f.image}}" class="link-chip-icon">
- <a title="{{f.describe}}" target="_blank" class="link-chip-title" href="{{f.url}}">{{f.name}}</a>
-</div>
-{% endfor %}
-
-
-<hr/>
-
-  {% if site.data.social.valine_comment.enable  == true %}
-  <script src="/comment/av-min.js"></script>
-  <script src="/comment/Valine.min.js"></script>
-  <div id="comments"></div>
-  {% include comments.html %}
-  {% endif %}
-  {% include scripts.html %}
+  
+## #我来告诉你为什么是不良人<br>
+> 很多人都问我，为什么总取这么个昵称？<br>
+> <br>
+> 其实，这是一部国产动漫，漫威出品，画风优质，剧情荡气回肠；<br>
+> 主人公心怀家国天下，每一个配角更是形象鲜活；<br>
+> 现在，画江湖之不良人已经更新到了第三部，强烈推荐给小伙伴们！
