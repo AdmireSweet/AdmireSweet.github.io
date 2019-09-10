@@ -1,7 +1,7 @@
 ---
 layout: page
 title: 我的爱好
-tagline: 想不想更了解我呢
+tagline: 进一步了解我呀:>
 sitetime: display
 permalink: /about.html
 ---
