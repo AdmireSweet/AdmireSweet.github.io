@@ -23,13 +23,13 @@ tagline: 我是一只合格的程序猿
   {% endif %}
   {% include scripts.html %}
 
-## #程序猿的全世界
+## 程序猿的全世界
 
 > Hello, world!<br>
 > This is the whole world of programmer!<br>
 
 
-## #走进新世界的大门
+## 走进新世界的大门
 
 > Computer has opened the door of the new world for me.<br>
 > So, go for it!
