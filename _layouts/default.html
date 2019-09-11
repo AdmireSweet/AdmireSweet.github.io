@@ -151,10 +151,36 @@
     }
   });
 </script>
-<script src='https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-MML-AM_CHTML' async></script>
+
 {% endif %}
 
-
+      <script>
+          ajax()
+  function ajax(option){
+    var xhr = null;
+    if(window.XMLHttpRequest){
+      xhr = new window.XMLHttpRequest();
+    }else{ // ie
+      xhr = new ActiveObject("Microsoft")
+    }
+    xhr.open("get","");
+    xhr.send(null);
+    xhr.onreadystatechange = function(){
+      var time = null,
+          curDate = null;
+      if(xhr.readyState===2){
+        // Get time
+        time = xhr.getResponseHeader("Date");
+        console.log(xhr.getAllResponseHeaders())
+        curDate = new Date(time);
+        document.getElementById("sitetime").innerHTML = (parseInt((((curDate.getTime() / 1000) - {{ site.buildtime }} ) / 86400 )));
+        {% if page.sitetime == 'display' %}
+        document.getElementById("sitetime2").innerHTML = (parseInt((((curDate.getTime() / 1000) - {{ site.buildtime }} ) / 86400 )));
+        {% endif %}
+      }
+    }
+  }
+      </script>
       {% if site.PJAX %}
       <script src = '/assets/js/instantclick.min.js' data-no-instant></script>
       <script data-no-instant>InstantClick.init();</script>
